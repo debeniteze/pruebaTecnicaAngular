@@ -1,0 +1,22 @@
+<table class="table table-responsive-sm table-bordered">
+    <tr class="bg-primary text-white">
+        <td>Fecha Factura: {{ oFactura.fecha |  date: 'dd MMM yyyy hh:mm a' }}</td>
+        <td colspan="3">Nombre Cliente: {{ oFactura.nombrecliente }}</td>
+        <td>Cedula Cliente: {{ oFactura.documentocliente }}</td>
+    </tr>
+    
+    <tr>
+        <td> SUBTOTAL</td>
+        <td> IVA </td>
+        <td> DESCUENTO</td>
+        <td> IMPUESTO </td>
+        <td> TOTAL</td>
+    </tr>
+    <tfoot>
+        <td> {{ oFactura.subtotal | currency }}</td>
+        <td> {{ oFactura.iva | currency }}</td>
+        <td> {{ oFactura.totaldescuento | currency }}</td>
+        <td> {{ oFactura.totalimpuesto | currency }}</td>
+        <td> {{ oFactura.total | currency }}</td>
+    </tfoot>
+</table>

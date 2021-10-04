@@ -1,0 +1,31 @@
+<form  novalidate [formGroup]="idFactura" (ngSubmit)="onSubmit()">
+  <div class="row col-md-3">
+    <label for="validationServerUsername" class="form-label">Busqueda factura</label>
+    <div class="input-group has-validation">
+      <input type="number" class="form-control" id="validationServerUsername"  formControlName="id" required>
+      <button class="btn btn-primary input-group-text" id="inputGroupPrepend3" type="submit"> <i class="fa fa-search"></i> </button>
+    </div>
+  </div>
+</form>
+<hr>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Num Factura</th>
+        <th scope="col">Nombre Cliente</th>
+        <th scope="col">Cedula Cliente</th>
+        <th scope="col">Total</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let factura of oFacturas">
+        <th>{{ factura.numerofactura }}</th>
+        <th>{{ factura.nombrecliente }}</th>
+        <th>{{ factura.documentocliente }}</th>
+        <th>{{ factura.total }}</th>
+        <th><i class="btn btn-sm fa fa-eye fa-sm padding-icons" routerLink="/view/{{factura.idfactura}}"></i><i class="fa fa-trash padding-icons" (click)="DeleteFactura(factura.idfactura)"></i></th>
+      </tr>
+
+    </tbody>
+  </table>

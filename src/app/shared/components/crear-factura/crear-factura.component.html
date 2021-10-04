@@ -1,0 +1,91 @@
+<form class="row g-3" novalidate [formGroup]="formValuesFactura" (ngSubmit)="onSubmit()"> 
+
+  <div class="col-md-4">
+    <label for="validationServerUsername" class="form-label">Numero Factura</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend3">$</span>
+      <input type="number" class="form-control" id="validationServerUsername"  formControlName="numerofactura" required>
+    </div>
+  </div>
+
+    <div class="col-md-4">
+      <label for="validationServer01" class="form-label">Nombre Cliente </label>
+      <input type="text" class="form-control" id="validationServer01" formControlName="nombrecliente" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationServer02" class="form-label">Documento Cliente</label>
+      <input type="number" class="form-control" id="validationServer02" formControlName="documentocliente" required>
+    </div>
+
+
+    <div class="col-md-3">
+        <label for="validationServer04" class="form-label">Tipo pago</label>
+        <select class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" formControlName="tipodepago" required>
+          <option selected disabled value="">Seleccione...</option>
+          <option value="1">Tarjeta Credito</option>
+          <option value="2">Tarjeta Debito</option>
+          <option value="3">Efectivo</option>
+        </select>
+      </div>
+    <div class="col-md-3">
+        <label for="validationServer04" class="form-label">Producto a facturar</label>
+        <select class="form-select" id="validationServer04" aria-describedby="validationServer04Feedback" formControlName="idproducto" required>
+          <option selected disabled value="">Seleccione...</option>
+          <option  *ngFor="let producto of oProductos" [value]=" producto.idProducto ">{{ producto.producto }}</option>
+        </select>
+    </div>
+
+    <div class="row">
+    <div class="col-md-4">
+      <label for="validationServerUsername" class="form-label">Subtotal</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend3">$</span>
+        <input type="number" class="form-control" id="validationServerUsername"  formControlName="subtotal" required>
+      </div>
+    </div>
+
+    <div class="col-md-4 col">
+        <label for="validationServerUsername" class="form-label">Descuento</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend3">$</span>
+          <input type="number" class="form-control" id="validationServerUsername"  formControlName="descuento" required>
+        </div>
+    </div>
+
+      <div class="col-md-4 col">
+        <label for="validationServerUsername" class="form-label">IVA 19%</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend3">$</span>
+          <input type="number" class="form-control" id="validationServerUsername"  formControlName="iva" required>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationServerUsername" class="form-label">Total Descuento%</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend3">$</span>
+          <input type="number" class="form-control" id="validationServerUsername"  formControlName="totaldescuento" required>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationServerUsername" class="form-label">Total Impuesto%</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend3">$</span>
+          <input type="number" class="form-control" id="validationServerUsername"  formControlName="totalimpuesto" required>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationServerUsername" class="form-label">Total</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend3">$</span>
+          <input type="number" class="form-control" id="validationServerUsername"  formControlName="total" required>
+        </div>
+      </div>
+    </div>
+   
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Guardar Factura</button>
+    </div>
+  </form>
