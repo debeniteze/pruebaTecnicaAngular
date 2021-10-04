@@ -1,6 +1,8 @@
 # PruebaTecnica
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+Se realiza el front con la ultima version angular, se hace uso de alertas con pluggin alertsweet2, se usan icon fontawesome, se utiliza HttpClient para consumo del APIREST,
+se implementan validaciones en la creacion de facturas, se utiliza el framework bootstrap 5.
 
 ## Development server
 
